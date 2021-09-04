@@ -1,0 +1,75 @@
+body {
+  font-family: sans-serif;
+}
+#app {
+  height: 500px;
+  width: 500px;
+  background-image: url("./src/tv.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#screen,
+#bsod {
+  position: absolute;
+  top: 130px;
+  left: 40px;
+}
+
+canvas {
+  border-radius: 10px;
+}
+
+#rgb,
+#bw,
+#power {
+  position: absolute;
+  top: 150px;
+  left: 395px;
+  width: 42px;
+  height: 50px;
+  border-radius: 100px;
+  background: #ddd;
+  border: white 1px solid;
+  color: black;
+  font-weight: 800;
+  transition: color 200ms, background 200ms;
+  outline: none;
+}
+
+#bw {
+  top: 220px;
+}
+
+#power {
+  top: 290px;
+}
+
+#rgb:hover,
+#bw:hover {
+  color: white;
+  background: #333;
+}
+
+#rgb:hover {
+  animation: color 1s linear 0s infinite forwards;
+}
+
+@keyframes color {
+  0% {
+    background: red;
+  }
+
+  33% {
+    background: cornflowerblue;
+  }
+
+  66% {
+    background: chartreuse;
+  }
+
+  100% {
+    background: red;
+  }
+}

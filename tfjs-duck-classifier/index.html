@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      th.result {
+        color: green;
+      }
+
+      td.result {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>Simple Duck Classifier</h1>
+      <div class="container">
+        <div class="row">
+          <table class="table">
+            <thead>
+              <th>Looks like a duck</th>
+              <th>Swims like a duck</th>
+              <th>Quacks like a duck</th>
+              <th class="result">Probably a Duck</th>
+              <th class="result">Definitely a Duck</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>false</td>
+                <td>false</td>
+                <td>false</td>
+                <td class="result">false</td>
+                <td class="result">false</td>
+              </tr>
+              <tr>
+                <td>false</td>
+                <td>false</td>
+                <td>true</td>
+                <td class="result">true</td>
+                <td class="result">false</td>
+              </tr>
+              <tr>
+                <td>false</td>
+                <td>true</td>
+                <td>false</td>
+                <td class="result">false</td>
+                <td class="result">false</td>
+              </tr>
+              <tr>
+                <td>false</td>
+                <td>true</td>
+                <td>true</td>
+                <td class="result">true</td>
+                <td class="result">false</td>
+              </tr>
+              <tr>
+                <td>true</td>
+                <td>false</td>
+                <td>false</td>
+                <td class="result">true</td>
+                <td class="result">false</td>
+              </tr>
+              <tr>
+                <td>true</td>
+                <td>false</td>
+                <td>true</td>
+                <td class="result">false</td>
+                <td class="result">true</td>
+              </tr>
+              <tr>
+                <td>true</td>
+                <td>true</td>
+                <td>false</td>
+                <td class="result">true</td>
+                <td class="result">false</td>
+              </tr>
+              <tr>
+                <td>true</td>
+                <td>true</td>
+                <td>true</td>
+                <td class="result">false</td>
+                <td class="result">true</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-12 mb-3">
+            <button id="train-model" type="submit" class="btn btn-primary mr-2">
+              Train Model
+            </button>
+            <span id="loss" class="training-result loss">Loss:</span>
+          </div>
+          <div class="col-12">
+            <form id="classify-form" class="form-inline">
+              <div class="input-group mr-2">
+                <div class="input-group-prepend mr-2">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      id="looks"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+                <label class="form-check-label">Looks like a duck</label>
+              </div>
+
+              <div class="input-group mr-2">
+                <div class="input-group-prepend mr-2">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      id="swims"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+                <label class="form-check-label">Swims like a duck</label>
+              </div>
+
+              <div class="input-group mr-2">
+                <div class="input-group-prepend mr-2">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      id="quacks"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+                <label class="form-check-label">Quacks like a duck</label>
+              </div>
+
+              <button id="classify" class="btn btn-primary">
+                Classify
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
